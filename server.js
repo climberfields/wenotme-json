@@ -32,7 +32,7 @@ const incidentController = require('./controllers/incidentController');
 const userController  = require('./controllers/userController');
 
 app.use('/api/v1/incident', incidentController);
-app.use('/auth', userController);
+app.use('/user', userController);
 
 app.listen(process.env.PORT || 9000, () => {
   console.log('listening on port 9000');
