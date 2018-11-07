@@ -5,7 +5,7 @@ const router = express.Router();
 // require Our Model - Remember Model is
 // a representation of our data
 // The model should capitalized
-const Movie = require('../models/incidents');
+const Incident = require('../models/incident');
 // Creating the index route
 // index route should show all the fruits
  router.get('/', async (req, res, next) => {
@@ -13,7 +13,7 @@ const Movie = require('../models/incidents');
   console.log(req.body, ' this is get all')
      try  {
 
-      const allIncidents = await Incidents.find();
+      const allIncidents = await Incident.find();
 
       // This is the response to react
       res.json({
@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
 
   try {
     console.log(req.body, ' this is req.body');
-    const createdIncident = await Incidents.create(req.body);
+    const createdIncident = await Incident.create(req.body);
     console.log('response happening?')
     res.json({
       status: 200,
@@ -72,7 +72,7 @@ router.get('/:id', async (req, res, next) => {
 router.put('/:id', async (req, res) => {
 
   try {
-    const updatedMovie = await Incident.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    const updatedIncident = await Incident.findByIdAndUpdate(req.params.id, req.body, {new: true});
     res.json({
       status: 200,
       data: updatedIncident
