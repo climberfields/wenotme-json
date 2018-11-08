@@ -58,7 +58,7 @@ router.get('/:id', async (req, res, next) => {
         const foundIncident = await Incident.findById(req.params.id);
         res.json({
           status: 200,
-          data: foundMovie
+          data: foundIncident
         });
 
       } catch (err){
